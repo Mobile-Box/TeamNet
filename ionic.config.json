@@ -1,0 +1,7 @@
+{
+  "name": "TeamNet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
