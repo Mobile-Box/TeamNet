@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   maxInput: 100,
-  maxZip: 5
+  maxZip: 5,
+  maxInputIban: 22,
+  maxInputSocialSecurityNumber: 12,
+  maxInputTaxIdentification: 14,
 };
 
 /*
