@@ -13,6 +13,9 @@ export class MainPage implements OnInit {
   //Constants
   public maxZip = environment.maxZip;
   public maxInput = environment.maxInput;
+  public maxInputIban = environment.maxInputIban;
+  public maxInputSocialSecurityNumber = environment.maxInputSocialSecurityNumber;
+  public maxInputTaxIdentification = environment.maxInputTaxIdentification;
 
   // Urls
   private kTeamMember = "37";
@@ -32,13 +35,13 @@ export class MainPage implements OnInit {
     cShippingZip: ['', [Validators.required, Validators.minLength(this.maxZip), Validators.maxLength(this.maxZip)]],
     cShippingCity: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
 
-    cTaxIdentification: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
+    cTaxIdentification: ['', [Validators.required, Validators.maxLength(this.maxInputTaxIdentification)]],
     cHealthInsurance: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
-    cSocialSecurtiyNumber: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
+    cSocialSecurtiyNumber: ['', [Validators.required, Validators.maxLength(this.maxInputSocialSecurityNumber)]],
     cNationaltiy: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
     tConfession: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
     cBank: ['', [Validators.required, Validators.maxLength(this.maxInput)]],
-    cIban: ['', [Validators.maxLength(this.maxInput)]],
+    cIban: ['', [Validators.required, Validators.maxLength(this.maxInputIban)]],
   });
 
   // Variables
