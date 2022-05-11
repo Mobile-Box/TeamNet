@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  maxInput: 100,
+  maxZip: 5
 };
