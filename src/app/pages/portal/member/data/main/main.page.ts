@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import {ConnApiService} from "../../../../../services/conn-api/conn-api.service";
 
 @Component({
   selector: 'app-main',
@@ -12,6 +13,10 @@ export class MainPage implements OnInit {
   //Constants
   public maxZip = environment.maxZip;
   public maxInput = environment.maxInput;
+
+  // Urls
+  private kTeamMember = "37";
+  private urlTeamMember = 'team/main/';
 
   // FormBuilder
   fgTeamMember = this.formBuilder.group({
@@ -37,6 +42,7 @@ export class MainPage implements OnInit {
   });
 
   // Variables
+  dataTeamMember;
   bSubmitted = false;
   oState = null;
   lStates = [];
@@ -47,9 +53,16 @@ export class MainPage implements OnInit {
   bPersonally: boolean = true;
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private connApi: ConnApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    // teamMember
+    this.connApi.safeGet(this.urlTeamMember+this.kTeamMember).subscribe((response) => {
+      this.dataTeamMember = response.body;
+      let teamMember = response.body;
+      console.log(teamMember);
+    })
+
     this.fgTeamMember.controls['cPrename'].setValue("Test-Vorname");
   }
 
