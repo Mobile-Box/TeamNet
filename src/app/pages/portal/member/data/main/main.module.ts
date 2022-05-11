@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { MainPageRoutingModule } from './main-routing.module';
 
 import { MainPage } from './main.page';
-import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
   imports: [
@@ -15,8 +14,7 @@ import {BrowserModule} from "@angular/platform-browser";
     FormsModule,
     IonicModule,
     MainPageRoutingModule,
-    ReactiveFormsModule,
-    BrowserModule,
+    ReactiveFormsModule
   ],
   declarations: [MainPage]
 })
