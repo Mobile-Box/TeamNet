@@ -40,6 +40,12 @@ export class MainPage implements OnInit {
   bSubmitted = false;
   oState = null;
   lStates = [];
+  oRelationship = null;
+  lRelationship = [];
+  oTitle = null;
+  lTitles: any[] = [{cName: 'Herr'}, {cName: 'Frau'}, {cName: 'Herr Dr.'}, {cName: 'Frau Dr.'},];
+  bPersonally: boolean = true;
+
 
   constructor(private formBuilder: FormBuilder) { }
 
